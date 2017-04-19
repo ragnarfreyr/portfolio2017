@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div id="work">
+{{ content }}
+</div>
+
+        <div id="postnav">
+                 <div class="left">
+                {% if page.next.url %}
+                        Previous Project:<br><a href="{{page.next.url}}" title="Previous:
+        {{page.next.title}}">{{page.next.title}}</a>
+                {% endif %}
+                </div>
+
+                <div class="left"> 
+                {% if page.previous.url %}
+                        Next project:<br>
+                        <a href="{{page.previous.url}}" title="Next:
+        {{page.previous.title}}">{{page.previous.title}}</a>
+                {% endif %}
+                </div>
+
+        </div>
