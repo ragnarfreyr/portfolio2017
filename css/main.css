@@ -220,6 +220,16 @@ footer {
   padding: 80px 0;
 }
 
+#workitem-overlay.not-loaded {
+  display: none;
+  visibility: hidden;
+}
+
+#workitem-overlay.loaded {
+  display: block;
+  visibility: visible;
+}
+
 
 /* ==========================================================================
    About
