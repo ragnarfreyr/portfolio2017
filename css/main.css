@@ -237,6 +237,7 @@ footer {
   position: absolute;
   top: 0;
   right: 0;
+  box-shadow: -4px 0 30px 0 rgba(0,0,0,0.10);
 }
 
 #workitem-overlay img {
