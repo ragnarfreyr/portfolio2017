@@ -76,22 +76,36 @@ body {
     margin: 0 auto;
 }
 
-a:link {
-    color: #404040;
-    text-decoration: none;
+a {
+  color: #3498DB;
+  text-decoration: none;
 }
 
 a:visited {
-    color: #404040;
-    text-decoration: none;
+  color: #3498DB;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #999;
+  text-decoration: underline;
 }
 
 header {
     margin: 0 0 60px 0;
+}
+
+header a:link {
+    color: #404040;
+    text-decoration: none;
+}
+
+header a:visited {
+    color: #404040;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #999;
 }
 
 header h1 {
@@ -257,20 +271,6 @@ body.overlay-open #overlay-wrapper {
 /* ==========================================================================
    About
    ========================================================================== */
-
-.about a, footer a {
-  color: #3498DB;
-  text-decoration: none;
-}
-
-.about a:visited, footer a:visited {
-  color: #3498DB;
-  text-decoration: none;
-}
-
-.about a:hover, footer a:hover {
-  text-decoration: underline;
-}
 
 .avatar {
     width: 100%;
