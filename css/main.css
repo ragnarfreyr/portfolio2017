@@ -156,7 +156,6 @@ ul, li {
   background-color: rgba(255,0,0,0.5);
   height: 100%;
   width: 100%;
-  z-index: 1000;
   position: absolute;
   opacity: 0;
   top: 0;
@@ -218,6 +217,25 @@ figcaption {
 
 footer {
   padding: 80px 0;
+}
+
+#workitem-overlay {
+  width: 70%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  padding: 40px;
+}
+
+#workitem-overlay.not-loaded {
+  display: none;
+  visibility: hidden;
+}
+
+#workitem-overlay.loaded {
+  display: block;
+  visibility: visible;
 }
 
 
