@@ -56,4 +56,18 @@ function setOverlay(content) {
   const overlay = document.getElementById('workitem-overlay');
   overlay.innerHTML = content;
   body.classList.add('overlay-open');
+  body.addEventListener('keyup', closeOverlayListener);
+}
+
+function closeOverlay() {
+  const body = document.getElementsByTagName('body')[0];
+  const overlay = document.getElementById('workitem-overlay');
+  overlay.innerHTML = '';
+  body.classList.remove('overlay-open');
+  body.removeEventListener('keyup', closeOverlayListener);
+}
+
+function closeOverlayListener(event) {
+  console.log('hommi')
+  if (event.keyCode === 27) closeOverlay();
 }
