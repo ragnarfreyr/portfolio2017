@@ -68,6 +68,5 @@ function closeOverlay() {
 }
 
 function closeOverlayListener(event) {
-  console.log('hommi')
   if (event.keyCode === 27) closeOverlay();
 }
