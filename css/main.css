@@ -221,19 +221,22 @@ footer {
 
 #workitem-overlay {
   width: 70%;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
+  bottom: 0;
   background: #fff;
   padding: 40px;
-}
-
-#workitem-overlay.not-loaded {
+  overflow-y: auto;
   display: none;
   visibility: hidden;
 }
 
-#workitem-overlay.loaded {
+body.overlay-open {
+  overflow-y: hidden;
+}
+
+body.overlay-open #workitem-overlay {
   display: block;
   visibility: visible;
 }

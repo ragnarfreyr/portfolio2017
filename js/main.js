@@ -52,7 +52,8 @@ function fetchWorkItem(itemUrl, memoizer) {
 }
 
 function setOverlay(content) {
+  const body = document.getElementsByTagName('body')[0];
   const overlay = document.getElementById('workitem-overlay');
   overlay.innerHTML = content;
-  overlay.className = 'loaded';
+  body.classList.add('overlay-open');
 }
