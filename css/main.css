@@ -137,9 +137,7 @@ ul, li {
     width: 66%;
 }
 
-/* Work */
-
-#work p {
+#grid p {
   font-size: 14px;
   line-height: 24px;
   font-weight: normal;;
@@ -219,6 +217,8 @@ footer {
   padding: 80px 0;
 }
 
+/* Work */
+
 #overlay-wrapper {
   position: fixed;
   top: 0;
@@ -231,12 +231,16 @@ footer {
 }
 
 #workitem-overlay {
-  width: 70%;
+  max-width: 1300px;
   background: #fff;
   padding: 40px;
   position: absolute;
   top: 0;
   right: 0;
+}
+
+#workitem-overlay img {
+  width: 100%;
 }
 
 body.overlay-open {
