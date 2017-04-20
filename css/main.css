@@ -219,24 +219,31 @@ footer {
   padding: 80px 0;
 }
 
-#workitem-overlay {
-  width: 70%;
+#overlay-wrapper {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  background: #fff;
-  padding: 40px;
+  left: 0;
   overflow-y: auto;
   display: none;
   visibility: hidden;
+}
+
+#workitem-overlay {
+  width: 70%;
+  background: #fff;
+  padding: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 body.overlay-open {
   overflow-y: hidden;
 }
 
-body.overlay-open #workitem-overlay {
+body.overlay-open #overlay-wrapper {
   display: block;
   visibility: visible;
 }
