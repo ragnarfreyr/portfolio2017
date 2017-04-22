@@ -1,12 +1,10 @@
-;(function ($) {
-    // Initialize smoothState on a container that has an id
-    $('#main').smoothState();
-})(jQuery);
+const memoizer = new Map();
 
 if (Modernizr && Modernizr.fetch) {
-  const links = document.getElementsByClassName('workitem-link');
-  const memoizer = new Map();
+  attachEventListeners(document.getElementsByClassName('workitem-link'));
+}
 
+function attachEventListeners(links) {
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
 
@@ -38,7 +36,7 @@ function fetchWorkItem(itemUrl, memoizer) {
     // (because we need to extract just the content to go in the overlay)
     const contentHolder = document.createElement('div');
     contentHolder.innerHTML = responseText;
-    const itemContent = contentHolder.querySelector('#work').innerHTML;
+    const itemContent = contentHolder.querySelector('#overlay-content').innerHTML;
 
     // Store the item content so that we don't have to fetch
     // it again over the network if user clicks this work item again
@@ -57,6 +55,8 @@ function setOverlay(content) {
   overlay.innerHTML = content;
   body.classList.add('overlay-open');
   body.addEventListener('keyup', closeOverlayListener);
+  attachEventListeners(overlay.getElementsByClassName('workitem-link'));
+  document.getElementById('overlay-wrapper').scrollTop = 0;
 }
 
 function closeOverlay() {
