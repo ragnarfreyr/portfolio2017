@@ -1,12 +1,10 @@
-;(function ($) {
-    // Initialize smoothState on a container that has an id
-    $('#main').smoothState();
-})(jQuery);
+const memoizer = new Map();
 
 if (Modernizr && Modernizr.fetch) {
-  const links = document.getElementsByClassName('workitem-link');
-  const memoizer = new Map();
+  attachEventListeners(document.getElementsByClassName('workitem-link'));
+}
 
+function attachEventListeners(links) {
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
 
@@ -38,7 +36,7 @@ function fetchWorkItem(itemUrl, memoizer) {
     // (because we need to extract just the content to go in the overlay)
     const contentHolder = document.createElement('div');
     contentHolder.innerHTML = responseText;
-    const itemContent = contentHolder.querySelector('#work').innerHTML;
+    const itemContent = contentHolder.querySelector('#overlay-content').innerHTML;
 
     // Store the item content so that we don't have to fetch
     // it again over the network if user clicks this work item again
@@ -54,17 +52,40 @@ function fetchWorkItem(itemUrl, memoizer) {
 function setOverlay(content) {
   const body = document.getElementsByTagName('body')[0];
   const overlay = document.getElementById('workitem-overlay');
+  const wrapper = document.getElementById('overlay-wrapper');
+  const close = document.getElementById('workitem-overlay-close');
+  const itemlinks = overlay.getElementsByClassName('workitem-link');
+
   overlay.innerHTML = content;
+  wrapper.scrollTop = 0;
   body.classList.add('overlay-open');
+
+  attachEventListeners(itemlinks);
   body.addEventListener('keyup', closeOverlayListener);
+  close.addEventListener('click', closeOverlay);
+  wrapper.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', blockCloseClick);
+}
+
+function blockCloseClick(event) {
+  // Make sure clicking on the overlay doesn't close it
+  // because of propagation down to the wrapper
+  event.stopPropagation();
 }
 
 function closeOverlay() {
   const body = document.getElementsByTagName('body')[0];
   const overlay = document.getElementById('workitem-overlay');
+  const close = document.getElementById('workitem-overlay-close');
+  const wrapper = document.getElementById('overlay-wrapper');
+
   overlay.innerHTML = '';
   body.classList.remove('overlay-open');
+
   body.removeEventListener('keyup', closeOverlayListener);
+  close.removeEventListener('click', closeOverlay);
+  wrapper.removeEventListener('click', closeOverlay);
+  overlay.removeEventListener('click', blockCloseClick);
 }
 
 function closeOverlayListener(event) {

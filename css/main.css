@@ -247,6 +247,7 @@ footer {
   height: 24px;
   width: 24px;
   background: url(/images/close.svg);
+  cursor: pointer;
 }
 
 body.overlay-open {
