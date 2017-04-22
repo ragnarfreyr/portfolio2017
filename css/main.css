@@ -212,6 +212,7 @@ footer {
 }
 
 #workitem-overlay {
+  width: 70%;
   max-width: 1300px;
   background: #fff;
   padding: 40px;
@@ -319,6 +320,11 @@ dd {
   #desc {
       margin-bottom: 20px;
       width: 100%;
+  }
+
+  #workitem-overlay {
+    width: 80%;
+    padding: 20px;
   }
 
 }
