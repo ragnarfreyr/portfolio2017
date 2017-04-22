@@ -226,6 +226,29 @@ footer {
   width: 100%;
 }
 
+#workitem-overlay h1 {
+  position: fixed;
+  top: 0px;
+  margin: 0;
+  padding: 40px 0 0 0;
+  height: 60px;
+  width: 100%;
+  background-color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+#workitem-overlay-close {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  height: 24px;
+  width: 24px;
+  background: url(/images/close.svg);
+}
+
 body.overlay-open {
   overflow-y: hidden;
 }
@@ -325,6 +348,16 @@ dd {
   #workitem-overlay {
     width: 80%;
     padding: 20px;
+  }
+
+  #workitem-overlay h1 {
+    padding: 20px 0 0 0;
+    height: 40px;
+  }
+
+  #workitem-overlay-close {
+    top: 20px;
+    right: 20px;
   }
 
 }
