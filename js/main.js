@@ -52,19 +52,28 @@ function fetchWorkItem(itemUrl, memoizer) {
 function setOverlay(content) {
   const body = document.getElementsByTagName('body')[0];
   const overlay = document.getElementById('workitem-overlay');
+  const wrapper = document.getElementById('overlay-wrapper');
+  const close = document.getElementById('workitem-overlay-close');
+  const itemlinks = overlay.getElementsByClassName('workitem-link');
+
   overlay.innerHTML = content;
+  wrapper.scrollTop = 0;
   body.classList.add('overlay-open');
+
+  attachEventListeners(itemlinks);
   body.addEventListener('keyup', closeOverlayListener);
-  attachEventListeners(overlay.getElementsByClassName('workitem-link'));
-  document.getElementById('overlay-wrapper').scrollTop = 0;
+  close.addEventListener('click', closeOverlay);
 }
 
 function closeOverlay() {
   const body = document.getElementsByTagName('body')[0];
   const overlay = document.getElementById('workitem-overlay');
+  const close = document.getElementById('workitem-overlay-close');
+
   overlay.innerHTML = '';
   body.classList.remove('overlay-open');
   body.removeEventListener('keyup', closeOverlayListener);
+  close.removeEventListener('click', closeOverlay);
 }
 
 function closeOverlayListener(event) {
