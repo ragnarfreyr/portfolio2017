@@ -63,17 +63,29 @@ function setOverlay(content) {
   attachEventListeners(itemlinks);
   body.addEventListener('keyup', closeOverlayListener);
   close.addEventListener('click', closeOverlay);
+  wrapper.addEventListener('click', closeOverlay);
+  overlay.addEventListener('click', blockCloseClick);
+}
+
+function blockCloseClick(event) {
+  // Make sure clicking on the overlay doesn't close it
+  // because of propagation down to the wrapper
+  event.stopPropagation();
 }
 
 function closeOverlay() {
   const body = document.getElementsByTagName('body')[0];
   const overlay = document.getElementById('workitem-overlay');
   const close = document.getElementById('workitem-overlay-close');
+  const wrapper = document.getElementById('overlay-wrapper');
 
   overlay.innerHTML = '';
   body.classList.remove('overlay-open');
+
   body.removeEventListener('keyup', closeOverlayListener);
   close.removeEventListener('click', closeOverlay);
+  wrapper.removeEventListener('click', closeOverlay);
+  overlay.removeEventListener('click', blockCloseClick);
 }
 
 function closeOverlayListener(event) {
