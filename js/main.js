@@ -1,7 +1,8 @@
 const memoizer = new Map();
 
-if (Modernizr && Modernizr.fetch) {
+if (Modernizr && Modernizr.fetch && location.pathname === '/') {
   attachEventListeners(document.getElementsByClassName('workitem-link'));
+  window.onpopstate = handlePopstateEvent;
 }
 
 function attachEventListeners(links) {
@@ -11,17 +12,34 @@ function attachEventListeners(links) {
     link.addEventListener('click', function(event) {
       event.preventDefault();
 
-      // Load the content from memory if possible
-      // (skip HTTP request if we've fetched it before)
-      if (memoizer.has(link.href)) {
-        setOverlay(memoizer.get(link.href));
-        return;
-      }
-
-      // Otherwise fetch the content over network
-      fetchWorkItem(link.href, memoizer);
+      history.pushState({href: link.href}, link.title, link.href);
+      loadItem(link.href);
     });
   }
+}
+
+function handlePopstateEvent(event) {
+  if (event.state == null || (event.state && event.state.href === '/')) {
+    // Pass in false so that we don't push state on this close
+    // and cannot go forward after this close. This way we'll
+    // be able to go forward and get back the overlay we just closed.
+    closeOverlay(null, false);
+  }
+  else {
+    loadItem(event.state.href);
+  }
+}
+
+function loadItem(url) {
+  // Load the content from memory if possible
+  // (skip HTTP request if we've fetched it before)
+  if (memoizer.has(url)) {
+    setOverlay(memoizer.get(url));
+    return;
+  }
+
+  // Otherwise fetch the content over network
+  fetchWorkItem(url, memoizer);
 }
 
 function fetchWorkItem(itemUrl, memoizer) {
@@ -73,7 +91,8 @@ function blockCloseClick(event) {
   event.stopPropagation();
 }
 
-function closeOverlay() {
+function closeOverlay(event, pushState) {
+  pushState = pushState == undefined ? true : pushState;
   const body = document.getElementsByTagName('body')[0];
   const overlay = document.getElementById('workitem-overlay');
   const close = document.getElementById('workitem-overlay-close');
@@ -86,6 +105,13 @@ function closeOverlay() {
   close.removeEventListener('click', closeOverlay);
   wrapper.removeEventListener('click', closeOverlay);
   overlay.removeEventListener('click', blockCloseClick);
+
+  // Boolean check here is because we do not
+  // want to push state if we are coming back to /,
+  // so we pass in false in the popstate on /.
+  if (pushState) {
+    history.pushState({href: '/'}, 'Home', '/');
+  }
 }
 
 function closeOverlayListener(event) {
