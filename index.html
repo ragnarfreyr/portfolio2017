@@ -14,7 +14,7 @@ title: Graphic Design, Reykjavík, Iceland
   {% for post in site.posts %}
     <div class="{{ post.columns }}">
       <div class="item">
-        <a href="{{ post.url }}" class="workitem-link">
+        <a href="{{ post.url }}" class="workitem-link" title="{{ post.title }}">
           <img class="workimage" src="{{ post.thumb }}" alt="Thumbnail">
         </a>
       </div>
