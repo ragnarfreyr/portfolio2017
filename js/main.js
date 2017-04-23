@@ -21,9 +21,8 @@ function attachEventListeners(links) {
 function handlePopstateEvent(event) {
   if (event.state == null || (event.state && event.state.href === '/')) {
     // Pass in false so that we don't push state on this close
-    // so that we don't rewrite history and cannot go forward
-    // after this close. This way we'll be able to go forward
-    // and get back the overlay we just closed.
+    // and cannot go forward after this close. This way we'll
+    // be able to go forward and get back the overlay we just closed.
     closeOverlay(null, false);
   }
   else {
