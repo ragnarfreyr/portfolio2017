@@ -9,17 +9,18 @@ layout: default
   </div>
 
   <div id="postnav">
-    <div class="left">
+    <div class="postnav-next">
       {% if page.next.url %}
         Previous Project:<br><a href="{{page.next.url}}" title="Previous: {{page.next.title}}" class="workitem-link">{{page.next.title}}</a>
       {% endif %}
     </div>
 
-    <div class="left">
+    <div class="postnav-prev">
       {% if page.previous.url %}
         Next project:<br>
         <a href="{{page.previous.url}}" title="Next: {{page.previous.title}}" class="workitem-link">{{page.previous.title}}</a>
       {% endif %}
     </div>
   </div>
+
 </div>

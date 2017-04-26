@@ -222,8 +222,15 @@ footer {
   box-shadow: -4px 0 30px 0 rgba(0,0,0,0.10);
 }
 
-#workitem-overlay img, #overlay-content img {
+#work img {
   width: 100%;
+  margin-bottom: 20px;
+}
+
+#work p {
+  max-width: 610px;
+  padding: 0;
+  margin: 0 0 20px 0;
 }
 
 #workitem-overlay h1 {
@@ -264,6 +271,22 @@ body.overlay-open {
 body.overlay-open #overlay-wrapper {
   display: block;
   visibility: visible;
+}
+
+#postnav {
+  border-top: 1px solid #ccc;
+  padding: 40px 0 40px 0;
+  margin-top: 30px;
+}
+
+.postnav-next {
+  float: right;
+  width: 50%;
+}
+
+.postnav-prev {
+  float: left;
+  width: 50%;
 }
 
 
