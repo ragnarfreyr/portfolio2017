@@ -213,7 +213,7 @@ footer {
 
 #workitem-overlay {
   width: 70%;
-  max-width: 1300px;
+  max-width: 1220px;
   background: #fff;
   padding: 40px;
   position: absolute;
@@ -222,7 +222,7 @@ footer {
   box-shadow: -4px 0 30px 0 rgba(0,0,0,0.10);
 }
 
-#workitem-overlay img {
+#workitem-overlay img, #overlay-content img {
   width: 100%;
 }
 
@@ -234,6 +234,13 @@ footer {
   height: 60px;
   width: 100%;
   background-color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+#overlay-content h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
