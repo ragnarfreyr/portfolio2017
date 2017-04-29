@@ -64,7 +64,7 @@ textarea {
 body {
     background-color: #f9f9f9;
     text-rendering: optimizeLegibility;
-    font: 18px/28px "inconsolata", "source-sans-pro", Arial, Sans-serif;
+    font: 18px/28px "inconsolata", Arial, Sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #404040;
@@ -224,14 +224,14 @@ footer {
 
 #work img {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #work p {
   width: 55%;
   padding: 0;
   margin: 0 0 20px 0;
-  float: left;
+  float: right;
 }
 
 #workitem-overlay h1 {
@@ -390,6 +390,15 @@ dd {
   #workitem-overlay-close {
     top: 20px;
     right: 20px;
+  }
+
+  #work img {
+    margin-bottom: 20px;
+  }
+
+  #work p {
+    width: 100%;
+    float: none;;
   }
 
 }
