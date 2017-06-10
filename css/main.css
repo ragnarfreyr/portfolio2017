@@ -68,12 +68,11 @@ body {
     font-weight: 400;
     font-style: normal;
     color: #404040;
-    margin: 40px;
+    margin: 30px 40px 40px 40px;
 }
 
 .wrapper {
-    max-width: 1300px;
-    margin: 0 auto;
+    max-width: 1100px;
 }
 
 a {
@@ -90,8 +89,12 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus {
+  outline: none;
+}
+
 header {
-    margin: 0 0 60px 0;
+    margin: 0 0 40px 0;
 }
 
 header a:link {
@@ -152,12 +155,14 @@ ul, li {
 }
 
 #grid p {
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: normal;;
+  width: 50%;
   display: block;
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
   padding: 0;
+}
+
+.worksample {
+  margin-bottom: 100px;
 }
 
 .item {
@@ -167,9 +172,50 @@ ul, li {
   -o-transition:      all 0.2s ease;
 }
 
-.item:hover {
-  filter: brightness(80%);
-  webkit-filter: brightness(80%);
+.caption {
+  background-color: rgba(255,0,0,0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+}
+
+.caption:hover {
+  opacity: 1;
+  top: 0px;
+  left: 0px;
+}
+
+figcaption {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 0px;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition:    all 0.2s ease;
+    -o-transition:      all 0.2s ease;
+}
+
+.captiontext {
+  position: relative;
+  top: 1px;
+}
+
+.caption:hover figcaption {
+  margin-left: 20px;
+}
+
+.workicon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
 }
 
 .workimage {
@@ -231,14 +277,13 @@ footer {
   width: 55%;
   padding: 0;
   margin: 0 0 20px 0;
-  float: right;
 }
 
 #workitem-overlay h1 {
   position: fixed;
   top: 0px;
   margin: 0;
-  padding: 40px 0 0 0;
+  padding: 30px 0 0 0;
   height: 60px;
   width: 100%;
   background-color: #fff;
@@ -259,8 +304,8 @@ footer {
   position: fixed;
   top: 40px;
   right: 40px;
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   background: url(/images/close.svg);
   cursor: pointer;
 }
@@ -342,6 +387,10 @@ dd {
       margin-right: 20px;
   }
 
+  #grid p {
+    width: 70%;
+  }
+
 }
 
 @media only screen and (max-width: 680px) {
@@ -379,7 +428,7 @@ dd {
 
   #workitem-overlay {
     width: 80%;
-    padding: 20px;
+    padding: 80px 20px 20px 20px;
   }
 
   #workitem-overlay h1 {
@@ -398,7 +447,14 @@ dd {
 
   #work p {
     width: 100%;
-    float: none;;
+  }
+
+  #grid p {
+    width: 100%;
+  }
+
+  .worksample {
+    margin-bottom: 40px;
   }
 
 }
