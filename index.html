@@ -3,25 +3,19 @@ layout: default
 title: Graphic Design, Reykjavík, Iceland
 ---
 
-<div class="clearfix wrapper">
-  <div id="desc">
-    I am Ragnar Freyr, a designer from Reykjavík, Iceland. I have been working on the intersection of traditional graphic design and digital/interaction design for over 15 years. Currently available for selected projects. Below are some of my favorite projects and recent work.
-  </div>
-</div>
-
 <section id="grid" class="clearfix wrapper">
-  <div class="row top-xs">
   {% for post in site.posts %}
-    <div class="{{ post.columns }}">
+    <div class="worksample">
       <div class="item">
-        <a href="{{ post.url }}" class="workitem-link" title="{{ post.title }}">
-          <img class="workimage" src="{{ post.thumb }}" alt="Thumbnail">
+        <a href="{{ post.url }}" class="workitem-link">
+          <span class="caption"><figcaption><img class="workicon" src="images/more.svg"><span class="captiontext">Click for more!</span></figcaption></span>
+          <img class="workimage" src="{{ post.thumb }}">
         </a>
       </div>
-      <p>{{ post.title }}</p>
+      <!--<p>{{ post.title }}</p>-->
+      <p>{{ post.excerpt }}</p>
     </div>
   {% endfor %}
-  </div>
 </section>
 
 <footer class="wrapper clearfix">

@@ -5,11 +5,13 @@ thumb: /images/thumb_bb.jpg
 columns: col-xs-12 col-md-6 col-lg-4
 ---
 
-<div><img src="/images/bb3.jpg" alt="Breakbeat.is"></div>
-
 I've been designing various posters and other marketing material for Breakbeat.is since 2003.
 
 [Breakbeat.is](http://www.breakbeat.is) is a web community focusing on the Icelandic drum & bass, jungle, dubstep and breakbeat scene and also Reykjavík's longest running club night, 10 years and counting! First Thursday of every month at Prikið, Reykjavík, Iceland.
+
+<!--more-->
+
+<div><img src="/images/bb3.jpg" alt="Breakbeat.is"></div>
 
 <div><img src="/images/bb31.jpg" class="m" alt="Breakbeat.is"></div>
 
