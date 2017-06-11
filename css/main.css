@@ -64,7 +64,7 @@ textarea {
 body {
     background-color: #f9f9f9;
     text-rendering: optimizeLegibility;
-    font: 18px/28px "inconsolata", Arial, Sans-serif;
+    font: 18px/28px "aktiv-grotesk", "Helvetica Neue", Helvetica, Arial, Sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #404040;
@@ -204,7 +204,7 @@ figcaption {
 
 .captiontext {
   position: relative;
-  top: 1px;
+  top: 2px;
 }
 
 .caption:hover figcaption {
