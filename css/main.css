@@ -94,7 +94,7 @@ a:focus {
 }
 
 header {
-    margin: 0 0 40px 0;
+    margin: 0 0 60px 0;
 }
 
 header a:link {
@@ -274,7 +274,7 @@ footer {
 }
 
 #work p {
-  width: 55%;
+  width: 50%;
   padding: 0;
   margin: 0 0 20px 0;
 }
@@ -308,6 +308,14 @@ footer {
   width: 20px;
   background: url(/images/close.svg);
   cursor: pointer;
+  opacity: 0.5;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+}
+
+#workitem-overlay-close:hover {
+  opacity: 1;
 }
 
 body.overlay-open {
@@ -320,13 +328,12 @@ body.overlay-open #overlay-wrapper {
 }
 
 #postnav {
-  border-top: 1px solid #ccc;
   padding: 40px 0 40px 0;
   margin-top: 30px;
 }
 
 .postnav-next {
-  float: right;
+  float: left;
   width: 50%;
 }
 
@@ -341,13 +348,15 @@ body.overlay-open #overlay-wrapper {
    ========================================================================== */
 
 .avatar {
-    width: 100%;
+  width: 100%;
 }
 
 .about h3 {
-    font-weight: normal;;
-    margin: 0 0 20px 0;
-    padding: 0;
+  font: 18px/28px "aktiv-grotesk", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 
 .about p {
@@ -356,18 +365,18 @@ body.overlay-open #overlay-wrapper {
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background-color: #ccc;
-    margin: 40px 0 40px 0;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin: 40px 0 40px 0;
 }
 
 dt {
-    float: left;
+  float: left;
 }
 
 dd {
-    margin: 0 0 0 50px;
+  margin: 0 0 0 50px;
 }
 
 
